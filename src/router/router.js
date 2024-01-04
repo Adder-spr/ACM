@@ -13,6 +13,76 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
     }
+  },
+  {
+    path:'/main',
+    name:'main',
+    component: function() {
+      return import('../views/MainView.vue')
+    },
+    redirect: "/main/ad_businesses",
+    children: [
+      {
+        path:'/main/ad_businesses',
+        component: function() {
+          return import('../views/children/audit/audit_Businesses.vue')
+        }
+      },
+      {
+        path:'/main/ad_farmers',
+        component: function() {
+          return import('../views/children/audit/audit_Farmers.vue')
+        }
+      },
+      {
+        path:'/main/ordersFin',
+        component: function() {
+          return import('../views/children/recording/orders_Finish.vue')
+        }
+      },
+      {
+        path:'/main/ordersPro',
+        component: function() {
+          return import('../views/children/recording/orders_Pro.vue')
+        }
+      },
+      {
+        path:'/main/ordersUnFin',
+        component: function() {
+          return import('../views/children/recording/orders_UnFin.vue')
+        }
+      },
+      {
+        path:'/main/sucLog',
+        component: function() {
+          return import('../views/children/log/sys/sucLog.vue')
+        }
+      },
+      {
+        path:'/main/failLog',
+        component: function() {
+          return import('../views/children/log/sys/failLog.vue')
+        }
+      },
+      {
+        path:'/main/warnLog',
+        component: function() {
+          return import('../views/children/log/sys/warnLog.vue')
+        }
+      },
+      {
+        path:'/main/errorLog',
+        component: function() {
+          return import('../views/children/log/sys/errorLog.vue')
+        }
+      },
+      {
+        path:'/main/personal',
+        component: function(){
+          return import('../views/children/personal/personal.vue')
+        }
+      }
+    ]
   }
 ]
 
