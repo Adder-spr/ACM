@@ -15,5 +15,7 @@ npm run serve
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 简介
+```
+这是一个农、商互助的管理平台
+```
