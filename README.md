@@ -1,21 +1,11 @@
 # managerac_m
 
-## Project setup
-```
-npm install
-```
-
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+npm run acm
 ```
 
 ### Compiles and minifies for production
 ```
 npm run build
-```
-
-### 简介
-```
-这是一个农、商互助的管理平台
 ```
