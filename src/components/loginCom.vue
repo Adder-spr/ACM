@@ -7,7 +7,7 @@
             <el-input v-model="form.account"></el-input>
           </el-form-item>
           <el-form-item label="密码：">
-            <el-input v-model="form.psd"></el-input>
+            <el-input v-model="form.psd" type="password"></el-input>
           </el-form-item>
           <el-form-item label="验证码：">
             <el-col :span="13">
@@ -63,22 +63,32 @@ export default {
         emil:'',
         code_emil:''
       },
-      type: 0,
+      loginType: 0,//登录类型区别密码还是验证码登录
+      userType: 'farmer',//用户类型用于区别用户是农户还是商户登录
     }
+  },
+  mounted(){
+    sessionStorage.clear();
+    sessionStorage.setItem('userType',this.userType)
   },
   methods: {
     Login(){
-      this.$emit('Login',this.form,this.type)
+      let params = {
+        form: this.form,
+        loginType: this.loginType,
+        userType: this.userType
+      }
+      this.$emit('Login',params)
     },
     register(){
       this.$emit('register',{register:true})
     },
     LoginType(info){
       let type = info.type
-      if(type != this.type){
+      if(type != this.loginType){
         Object.keys(this.form).forEach(key => { this.form[key] = '' })
       }
-      this.type = info.index
+      this.loginType = info.index
     }
   }
 }

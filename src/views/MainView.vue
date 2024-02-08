@@ -1,6 +1,6 @@
 <template>
     <div style="display: flex;">
-        <div>
+        <div style="max-width: 12%;">
             <el-menu 
             :default-active="defaultActive"
             router
@@ -26,7 +26,7 @@
                 </el-submenu>
             </el-menu>
         </div>
-        <div style="width: 100%;">
+        <div style="min-width: 88%;">
             <router-view />
         </div>
     </div>
@@ -119,7 +119,7 @@ export default {
 <style scoped>
  .load {
     z-index: 1;
-    width: 200px;
+    max-width: 100%;
     min-height: 100vh;
  }
 </style>
